@@ -61,12 +61,16 @@ unsigned int AD770X::readADResult() {
     return r;
 }
 
-double AD770X::readADResult(byte channel, float refOffset) {
+unsigned int AD770X::readADResultRaw(byte channel) {
     while (!dataReady(channel)) {
     };
     setNextOperation(REG_DATA, channel, 1);
 
-    return readADResult() * 1.0 / 65536.0 * VRef - refOffset;
+    return readADResult();
+}
+
+double AD770X::readADResult(byte channel, float refOffset) {
+    return readADResultRaw(channel) * 1.0 / 65536.0 * VRef - refOffset;
 }
 
 bool AD770X::dataReady(byte channel) {
