@@ -77,6 +77,7 @@ public:
     void setNextOperation(byte reg, byte channel, byte readWrite);
     void writeClockRegister(byte CLKDIS, byte CLKDIV, byte outputUpdateRate);
     void writeSetupRegister(byte operationMode, byte gain, byte unipolar, byte buffered, byte fsync);
+    unsigned int readADResultRaw(byte channel);
     double readADResult(byte channel, float refOffset = 0.0);
     void reset();
     bool dataReady(byte channel);
