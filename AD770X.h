@@ -59,8 +59,8 @@ public:
     static const byte GAIN_64 = 0x6;
     static const byte GAIN_128 = 0x7;
 
-    static const byte UNIPOLAR = 0x0;
-    static const byte BIPOLAR = 0x1;
+    static const byte BIPOLAR = 0x0;
+    static const byte UNIPOLAR = 0x1;
 
     static const byte CLK_DIV_1 = 0x1;
     static const byte CLK_DIV_2 = 0x2;
